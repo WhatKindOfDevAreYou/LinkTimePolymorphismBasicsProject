@@ -1,7 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 
-#include <Serialization/Serializer.hpp>
 #include <Serialization/Common/SerializerPrivate.hpp>
+#include <Serialization/Serializer.hpp>
 
 Serializer::Serializer (const char *_outputFileName) noexcept
     : implementation (
@@ -17,6 +17,7 @@ void Serializer::WriteInt32 (int32_t _number) noexcept
 
 void Serializer::WriteAsciiString (const char *_string) noexcept
 {
+    // We are adding 1 to strlen in order to capture zero terminator.
     implementation->output.write (_string, strlen (_string) + 1u);
 }
 

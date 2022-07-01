@@ -1,5 +1,5 @@
-#include <Serialization/Serializer.hpp>
 #include <Serialization/Common/SerializerPrivate.hpp>
+#include <Serialization/Serializer.hpp>
 
 Serializer::Serializer (const char *_outputFileName) noexcept
     : implementation (new SerializerImplementation {std::ofstream {_outputFileName, std::ofstream::out}})
