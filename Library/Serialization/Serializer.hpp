@@ -2,6 +2,13 @@
 
 #include <cstdint>
 
+// Declare whether we're exporting or importing dynamic symbols. Needed only for Windows builds.
+#ifdef SERIALIZATION_IMPLEMENTATION
+#    define SERIALIZATION_API __declspec(dllexport)
+#else
+#    define SERIALIZATION_API __declspec(dllimport)
+#endif
+
 // We are using PImpl approach to hide implementation data from user code.
 // https://en.cppreference.com/w/cpp/language/pimpl
 // It also allows to easily switch DLLs.
@@ -11,7 +18,7 @@
 // performance, which means nothing here, for readability. :)
 struct SerializerImplementation;
 
-class Serializer final
+class SERIALIZATION_API Serializer final
 {
 public:
     explicit Serializer (const char *_outputFileName) noexcept;
