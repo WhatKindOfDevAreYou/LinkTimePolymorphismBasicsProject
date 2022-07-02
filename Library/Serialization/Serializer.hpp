@@ -13,9 +13,9 @@
 // https://en.cppreference.com/w/cpp/language/pimpl
 // It also allows to easily switch DLLs.
 //
-// The other approach is to use inplace fixed size array, which is better for this case,
-// but makes  tutorial much less readable. Therefore, I've decided to sacrifice
-// performance, which means nothing here, for readability. :)
+// The other approach is to use inplace fixed size array, which is better for
+// this case, but makes  tutorial much less readable. So I've decided to sacrifice
+// performance for readability, because performance means nothing here.
 struct SerializerImplementation;
 
 class SERIALIZATION_API Serializer final

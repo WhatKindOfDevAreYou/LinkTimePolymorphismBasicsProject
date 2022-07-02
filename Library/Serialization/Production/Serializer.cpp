@@ -11,7 +11,7 @@ Serializer::Serializer (const char *_outputFileName) noexcept
 
 void Serializer::WriteInt32 (int32_t _number) noexcept
 {
-    // It is incorrect to save ints like this because it ignores endianness. But it is ok enough for our sample.
+    // It is incorrect to save ints like this because we ignore endianness. But it is ok enough for our sample.
     implementation->output.write (reinterpret_cast<const char *> (&_number), sizeof (_number));
 }
 

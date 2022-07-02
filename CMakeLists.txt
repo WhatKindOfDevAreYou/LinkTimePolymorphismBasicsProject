@@ -6,6 +6,6 @@ set (CMAKE_CXX_STANDARD 20)
 # Build system option that is used for implementation selection.
 option (DEVELOPMENT "Whether to use development serialization library." OFF)
 
-# Just add our subscripts for application and library.
+# Just add our scripts for application and library.
 add_subdirectory (App)
 add_subdirectory (Library/Serialization)
